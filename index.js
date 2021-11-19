@@ -13,7 +13,7 @@ app.post('/login', (req,res) => {
     let message = "Access Denied";
 
     if(userName == 'admin' && password == '123'){
-        message = 'Welcome'
+        res.redirect("admin.html");
     }
     res.send(message);
 })
@@ -21,12 +21,12 @@ app.post('/login', (req,res) => {
 app.post('/guest', (req, res) => {
 
     let onClick = req.body.gst;
-    let message = 'Welcome'
+    let message = 'Uh oh something went wrong!'
 
     onClick = true;
    
     if(true){
-        message = 'fuck u'
+        res.redirect("guest.html");
     }
     res.send(message)
 })
@@ -36,4 +36,4 @@ app.post('/guest', (req, res) => {
 app.use(express.static('static'))
 //dynamic handling
 
-app.listen(2000);
+app.listen(80);
